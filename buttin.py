@@ -1916,6 +1916,16 @@ class Me:
                                                                         "1]/android.widget.Button[1]")
         return MeConfirmPassword
 
+    def GetMeResetPasswordBack(self):
+        MeResetPasswordBAck = self.driver.find_element(by=By.XPATH, value="/hierarchy/android.widget.FrameLayout"
+                                                                          "/android.widget.LinearLayout/android"
+                                                                          ".widget.FrameLayout/android.widget"
+                                                                          ".LinearLayout/android.widget.FrameLayout"
+                                                                          "/android.widget.LinearLayout/android"
+                                                                          ".widget.RelativeLayout/android.widget"
+                                                                          ".ImageView")
+        return MeResetPasswordBAck
+
 
 class ComposeTest:
     def GetDeviceRoutesAdd(self):

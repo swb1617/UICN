@@ -1,11 +1,11 @@
 """
 user:石文斌
-time：2021/11/15
+time：2021/12/06
 
 """
 import time
 import unittest
-from buttin import *
+from buttin import ComposeTest,Me,Menu,Message,Activity,Tap,Data
 from appium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 
@@ -14,17 +14,19 @@ class test_UI(unittest.TestCase):
 
     def setUp(self) -> None:  # 执行方法前准备工作
         self.driver.implicitly_wait(15)  # 稳定元素
-        print("...........开始.............")
+        time.sleep(2)
+        # print("...........开始.............")
 
     def tearDown(self) -> None:  # 执行方法后工作
-        print("...........结束..............")
+        time.sleep(2)
+        # print("...........结束..............")
 
     @classmethod
     def setUpClass(cls) -> None:  # 执行测试类前准备工作
         desired_caps = {
             'platformName': 'Android',
             'platformVersion': '9',
-            'deviceName': 'test01',
+            'deviceName': 'swb',
             'appPackage': 'com.igpsport.igpsportandroid',
             'appActivity': 'com.igpsport.globalapp.activity.v3.SplashActivity',
             'noReset': True,
@@ -378,6 +380,85 @@ class test_UI(unittest.TestCase):
         Me.GetMeConfirmPassword(self).click()
         self.GetToast("密码重置完成")
         Me.GetMeAccountSettingBack(self).click()
+
+    def test_NoNewPasswordError(self):
+        OldPassword = 123456
+        Tap.GetToMe(self).click()
+        Me.GetMeAccountSettingInfo(self).click()
+        Me.GetMeResetPasswordInfo(self).click()
+        Me.GetMeOldPasswordText(self).click()
+        Me.GetMeOldPasswordText(self).send_keys(OldPassword)
+        Me.GetMeConfirmPassword(self).click()
+        try:
+            self.GetToast("请输入新密码：")
+            Me.GetMeResetPasswordBack(self).click()
+            Me.GetMeAccountSettingBack(self).click()
+        except:
+            self.driver.save_screenshot('NoNewPasswordError.png')
+
+    def test_NoNewAgainPasswordError(self):
+        OldPassword = 123456
+        NewPassword = 123456
+        Tap.GetToMe(self).click()
+        Me.GetMeAccountSettingInfo(self).click()
+        Me.GetMeResetPasswordInfo(self).click()
+        Me.GetMeOldPasswordText(self).click()
+        Me.GetMeOldPasswordText(self).send_keys(OldPassword)
+        Me.GetMeNemPasswordText(self).click()
+        Me.GetMeNemPasswordText(self).send_keys(NewPassword)
+        Me.GetMeConfirmPassword(self).click()
+        try:
+            self.GetToast("请再次输入新密码：")
+            Me.GetMeResetPasswordBack(self).click()
+            Me.GetMeAccountSettingBack(self).click()
+        except:
+            self.driver.save_screenshot('NoNewAgainPasswordError.png')
+            Me.GetMeResetPasswordBack(self).click()
+            Me.GetMeAccountSettingBack(self).click()
+
+    def test_NoOldPasswordError(self):
+        OldPassword = 123456
+        NewPassword = 123456
+        Tap.GetToMe(self).click()
+        Me.GetMeAccountSettingInfo(self).click()
+        Me.GetMeResetPasswordInfo(self).click()
+        Me.GetMeOldPasswordText(self).click()
+        # Me.GetMeOldPasswordText(self).send_keys(OldPassword)
+        Me.GetMeNemPasswordText(self).click()
+        Me.GetMeNemPasswordText(self).send_keys(NewPassword)
+        Me.GetMeAgainNemPasswordText(self).click()
+        Me.GetMeAgainNemPasswordText(self).send_keys(NewPassword)
+        Me.GetMeConfirmPassword(self).click()
+        try:
+            self.GetToast("请输入旧密码")
+            Me.GetMeResetPasswordBack(self).click()
+            Me.GetMeAccountSettingBack(self).click()
+        except:
+            self.driver.save_screenshot('NoOldPasswordError.png')
+            Me.GetMeResetPasswordBack(self).click()
+            Me.GetMeAccountSettingBack(self).click()
+
+    def test_NoPasswordError(self):
+        OldPassword = 123456
+        NewPassword = 123456
+        Tap.GetToMe(self).click()
+        Me.GetMeAccountSettingInfo(self).click()
+        Me.GetMeResetPasswordInfo(self).click()
+        Me.GetMeOldPasswordText(self).click()
+        # Me.GetMeOldPasswordText(self).send_keys(OldPassword)
+        # Me.GetMeNemPasswordText(self).click()
+        # Me.GetMeNemPasswordText(self).send_keys(NewPassword)
+        # Me.GetMeAgainNemPasswordText(self).click()
+        # Me.GetMeAgainNemPasswordText(self).send_keys(NewPassword)
+        Me.GetMeConfirmPassword(self).click()
+        try:
+            self.GetToast("请输入旧密码")
+            Me.GetMeResetPasswordBack(self).click()
+            Me.GetMeAccountSettingBack(self).click()
+        except:
+            self.driver.save_screenshot('NoPasswordError.png')
+            Me.GetMeResetPasswordBack(self).click()
+            Me.GetMeAccountSettingBack(self).click()
 
 
 if __name__ == '__main__':

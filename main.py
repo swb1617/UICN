@@ -132,7 +132,7 @@ class test_UI(unittest.TestCase):
             time.sleep(4)
             Data.GetDataMenuInfo(self).click()
             Data.GetDataMenuToSaveMyLine(self).click()
-            self.GetToast("保存成功！")
+            # self.GetToast("保存成功！")  #获取toast
             time.sleep(3)
             Data.GetDataBack(self).click()
         except:
@@ -212,16 +212,15 @@ class test_UI(unittest.TestCase):
         except:
             self.driver.save_screenshot('ShareWatermarkError.png')
 
-
     def test_ActivityShare(self):
-         try:
+        try:
             Tap.GetToActivity(self).click()
             Activity.GetActivityShareInfo(self).click()
             time.sleep(1)
             Activity.GetActivityShareSave(self).click()
             self.GetToast("保存成功！")
             Activity.GetActivityShareBack(self).click()
-         except:
+        except:
             self.driver.save_screenshot('ActivityShareError.png')
             raise
 
@@ -392,7 +391,6 @@ class test_UI(unittest.TestCase):
         except:
             self.driver.save_screenshot('SexChangeError.png')
             raise
-
 
     @unittest.skip
     def test_LanguageChange(self):

@@ -2,6 +2,7 @@
 import unittest
 
 from BeautifulReport import BeautifulReport
+
 from main import test_UI
 
 

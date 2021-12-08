@@ -790,7 +790,7 @@ class test_UI(unittest.TestCase):
             self.driver.save_screenshot('FeedBack9Error.png')
             raise
 
-    def test_FeedBacka(self):  # 反馈界面
+    def test_FeedBackA(self):  # 反馈界面
         try:
             QuestionName = 'test'
             Tap.GetToMe(self).click()
@@ -815,10 +815,10 @@ class test_UI(unittest.TestCase):
             time.sleep(10)
             Me.GetMeAfterSaleServiceBack(self).click()
         except:
-            self.driver.save_screenshot('FeedBackaError.png')
+            self.driver.save_screenshot('FeedBackAError.png')
             raise
 
-    def test_FeedBackb(self):  # 反馈界面
+    def test_FeedBackB(self):  # 反馈界面
         try:
             QuestionName = 'test'
             Tap.GetToMe(self).click()
@@ -843,7 +843,7 @@ class test_UI(unittest.TestCase):
             time.sleep(10)
             Me.GetMeAfterSaleServiceBack(self).click()
         except:
-            self.driver.save_screenshot('FeedBackbError.png')
+            self.driver.save_screenshot('FeedBackBError.png')
             raise
 
     def test_ActivityChangeGoals(self):

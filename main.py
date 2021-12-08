@@ -6,11 +6,11 @@ time：2021/12/06
 import time
 import unittest
 
+from appium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
 
 from buttin import ComposeTest, Me, Menu, Message, Activity, Tap, Data
-from appium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
 
 
 class test_UI(unittest.TestCase):
@@ -132,7 +132,7 @@ class test_UI(unittest.TestCase):
             time.sleep(4)
             Data.GetDataMenuInfo(self).click()
             Data.GetDataMenuToSaveMyLine(self).click()
-            self.GetToast("保存成功！")  #获取toast
+            self.GetToast("保存成功！")  # 获取toast
             time.sleep(3)
             Data.GetDataBack(self).click()
         except:
@@ -219,7 +219,7 @@ class test_UI(unittest.TestCase):
             # Data.GetDataWatermarkPhotoAlt(self).click()
             Data.GetDataWatermarkPhotoData(self).click()
             Data.GetDataWatermarkPhotoSave(self).click()
-            self.GetToast("保存成功！")  #获取toast
+            self.GetToast("保存成功！")  # 获取toast
             # Data.GetDataWatermarkPhotoChangePhoto(self).click()
             # Data.GetDataWatermarkPhotoChoosePhoto(self).click()
             # Data.GetDataWatermarkPhotoSeePhoto(self).click()
@@ -252,11 +252,11 @@ class test_UI(unittest.TestCase):
             Data.GetDataWatermarkPhotoSeePhoto(self).click()
             time.sleep(1)
             Data.GetDataWatermarkPhotoSave(self).click()
-            self.GetToast("保存成功！")  #获取toast
+            self.GetToast("保存成功！")  # 获取toast
             time.sleep(1)
             Data.GetDataWatermarkRestoreDefault(self).click()
             Data.GetDataWatermarkPhotoSave(self).click()
-            self.GetToast("保存成功！")  #获取toast
+            self.GetToast("保存成功！")  # 获取toast
             time.sleep(2)
             Data.GetDataWatermarkPhotoBack(self).click()
             Data.GetDataShareBack(self).click()
@@ -281,7 +281,7 @@ class test_UI(unittest.TestCase):
             Data.GetDataWatermarkPhotoSeePhoto(self).click()
             time.sleep(1)
             Data.GetDataWatermarkPhotoSave(self).click()
-            self.GetToast("保存成功！")  #获取toast
+            self.GetToast("保存成功！")  # 获取toast
             # time.sleep(1)
             # Data.GetDataWatermarkRestoreDefault(self).click()
             # Data.GetDataWatermarkPhotoSave(self).click()
@@ -305,7 +305,7 @@ class test_UI(unittest.TestCase):
             # Data.GetDataWatermarkPhotoAlt(self).click()
             # Data.GetDataWatermarkPhotoData(self).click()
             Data.GetDataWatermarkPhotoSave(self).click()
-            self.GetToast("保存成功！")  #获取toast
+            self.GetToast("保存成功！")  # 获取toast
             # Data.GetDataWatermarkPhotoChangePhoto(self).click()
             # Data.GetDataWatermarkPhotoChoosePhoto(self).click()
             # Data.GetDataWatermarkPhotoSeePhoto(self).click()
@@ -340,12 +340,12 @@ class test_UI(unittest.TestCase):
             Data.GetDataWatermarkPhotoSeePhoto(self).click()
             time.sleep(1)
             Data.GetDataWatermarkPhotoSave(self).click()
-            self.GetToast("保存成功！")  #获取toast
+            self.GetToast("保存成功！")  # 获取toast
             time.sleep(1)
             Data.GetDataWatermarkRestoreDefault(self).click()
             time.sleep(1)
             Data.GetDataWatermarkPhotoSave(self).click()
-            self.GetToast("保存成功！")  #获取toast
+            self.GetToast("保存成功！")  # 获取toast
             time.sleep(2)
             Data.GetDataWatermarkPhotoBack(self).click()
             Data.GetDataShareBack(self).click()
@@ -371,7 +371,7 @@ class test_UI(unittest.TestCase):
             Data.GetDataWatermarkPhotoSeePhoto(self).click()
             time.sleep(1)
             Data.GetDataWatermarkPhotoSave(self).click()
-            self.GetToast("保存成功！")  #获取toast
+            self.GetToast("保存成功！")  # 获取toast
             # time.sleep(1)
             # Data.GetDataWatermarkRestoreDefault(self).click()
             # time.sleep(1)
@@ -396,7 +396,7 @@ class test_UI(unittest.TestCase):
             Data.GetDataWatermarkPhotoAlt(self).click()
             # Data.GetDataWatermarkPhotoData(self).click()
             Data.GetDataWatermarkPhotoSave(self).click()
-            self.GetToast("保存成功！")  #获取toast
+            self.GetToast("保存成功！")  # 获取toast
             # Data.GetDataWatermarkPhotoChangePhoto(self).click()
             # Data.GetDataWatermarkPhotoChoosePhoto(self).click()
             # Data.GetDataWatermarkPhotoSeePhoto(self).click()
@@ -430,11 +430,11 @@ class test_UI(unittest.TestCase):
             Data.GetDataWatermarkPhotoChoosePhoto(self).click()
             Data.GetDataWatermarkPhotoSeePhoto(self).click()
             Data.GetDataWatermarkPhotoSave(self).click()
-            self.GetToast("保存成功！")  #获取toast
+            self.GetToast("保存成功！")  # 获取toast
             time.sleep(1)
             Data.GetDataWatermarkRestoreDefault(self).click()
             Data.GetDataWatermarkPhotoSave(self).click()
-            self.GetToast("保存成功！")  #获取toast
+            self.GetToast("保存成功！")  # 获取toast
             time.sleep(2)
             Data.GetDataWatermarkPhotoBack(self).click()
             Data.GetDataShareBack(self).click()
@@ -450,7 +450,7 @@ class test_UI(unittest.TestCase):
             time.sleep(8)
             Data.GetDataShare(self).click()
             time.sleep(3)
-            Data.GetDataShareWatermarkPhoto(self).click()  #国际·国内有区别
+            Data.GetDataShareWatermarkPhoto(self).click()  # 国际·国内有区别
             # Data.GetDataWatermarkPhotoTrack(self).click()
             Data.GetDataWatermarkPhotoAlt(self).click()
             # Data.GetDataWatermarkPhotoData(self).click()
@@ -459,7 +459,7 @@ class test_UI(unittest.TestCase):
             Data.GetDataWatermarkPhotoChoosePhoto(self).click()
             Data.GetDataWatermarkPhotoSeePhoto(self).click()
             Data.GetDataWatermarkPhotoSave(self).click()
-            self.GetToast("保存成功！")  #获取toast
+            self.GetToast("保存成功！")  # 获取toast
             # time.sleep(1)
             # Data.GetDataWatermarkRestoreDefault(self).click()
             # Data.GetDataWatermarkPhotoSave(self).click()
@@ -526,6 +526,7 @@ class test_UI(unittest.TestCase):
             Me.GetMeUserDetailsBack(self).click()
         except:
             self.driver.save_screenshot('MeSettingPowerError.png')
+            raise
 
     def test_AboutUs(self):
         try:
@@ -1076,7 +1077,7 @@ class test_UI(unittest.TestCase):
             raise
 
     def test_NoOldPasswordError(self):
-        OldPassword = 123456
+        # OldPassword = 123456
         NewPassword = 123456
         Tap.GetToMe(self).click()
         Me.GetMeAccountSettingInfo(self).click()
@@ -1099,8 +1100,8 @@ class test_UI(unittest.TestCase):
             raise
 
     def test_NoPasswordError(self):
-        OldPassword = 123456
-        NewPassword = 123456
+        # OldPassword = 123456
+        # NewPassword = 123456
         Tap.GetToMe(self).click()
         Me.GetMeAccountSettingInfo(self).click()
         Me.GetMeResetPasswordInfo(self).click()

@@ -285,7 +285,7 @@ class Data:
                                                                               "1]/android.widget.LinearLayout["
                                                                               "1]/android.widget.FrameLayout["
                                                                               "1]/android.widget.LinearLayout["
-                                                                              "1]/android.widget.LinearLayout[2]")
+                                                                              "1]/android.widget.LinearLayout[3]")
         return DataShareWatermarkPhoto
 
     def GetDataWatermarkPhotoChangePhoto(self):

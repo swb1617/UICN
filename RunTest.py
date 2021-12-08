@@ -17,4 +17,4 @@ def suite():
 
 if __name__ == '__main__':
     report = BeautifulReport(suite())
-    report.report(filename='testdemoreport.html', description='自动化测试报告', log_path='.', report_dir='.')
+    report.report(filename='TestReport.html', description='自动化测试报告', log_path='.', report_dir='.')

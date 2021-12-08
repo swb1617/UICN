@@ -288,6 +288,74 @@ class Data:
                                                                               "1]/android.widget.LinearLayout[2]")
         return DataShareWatermarkPhoto
 
+    def GetDataWatermarkPhotoChangePhoto(self):
+        DataWatermarkPhotoChangePhoto = self.driver.find_element(by=By.XPATH, value="/hierarchy/android.widget"
+                                                                                    ".FrameLayout/android.widget"
+                                                                                    ".LinearLayout/android.widget"
+                                                                                    ".FrameLayout/android.widget"
+                                                                                    ".LinearLayout/android.widget"
+                                                                                    ".FrameLayout/android.widget"
+                                                                                    ".LinearLayout/android.widget"
+                                                                                    ".FrameLayout/android.widget"
+                                                                                    ".ScrollView/android.widget"
+                                                                                    ".LinearLayout/android.widget"
+                                                                                    ".LinearLayout/android.widget"
+                                                                                    ".TextView[2]")
+        return DataWatermarkPhotoChangePhoto
+
+    def GetDataWatermarkPhotoChoosePhoto(self):
+        DataWatermarkPhotoChoosePhoto = self.driver.find_element(by=By.XPATH, value="/hierarchy/android.widget"
+                                                                                    ".FrameLayout/android.widget"
+                                                                                    ".LinearLayout/android.widget"
+                                                                                    ".FrameLayout/android.widget"
+                                                                                    ".LinearLayout/android.widget"
+                                                                                    ".FrameLayout/android.widget"
+                                                                                    ".RelativeLayout/androidx"
+                                                                                    ".recyclerview.widget"
+                                                                                    ".RecyclerView/android.widget"
+                                                                                    ".RelativeLayout["
+                                                                                    "2]/android.widget.TextView")
+        return DataWatermarkPhotoChoosePhoto
+
+    def GetDataWatermarkRestoreDefault(self):
+        DataWatermarkRestoreDefault = self.driver.find_element(by=By.XPATH, value="/hierarchy/android.widget"
+                                                                                  ".FrameLayout/android.widget"
+                                                                                  ".LinearLayout/android.widget"
+                                                                                  ".FrameLayout/android.widget"
+                                                                                  ".LinearLayout/android.widget"
+                                                                                  ".FrameLayout/android.widget"
+                                                                                  ".LinearLayout/android.widget"
+                                                                                  ".FrameLayout/android.widget"
+                                                                                  ".ScrollView/android.widget"
+                                                                                  ".LinearLayout/android.widget"
+                                                                                  ".LinearLayout/android.widget"
+                                                                                  ".TextView[1]")
+        return DataWatermarkRestoreDefault
+
+    def GetDataWatermarkPhotoSave(self):
+        DataWatermarkPhotoSave = self.driver.find_element(by=By.XPATH, value="/hierarchy/android.widget.FrameLayout"
+                                                                             "/android.widget.LinearLayout/android"
+                                                                             ".widget.FrameLayout/android.widget"
+                                                                             ".LinearLayout/android.widget"
+                                                                             ".FrameLayout/android.widget"
+                                                                             ".LinearLayout/android.widget"
+                                                                             ".FrameLayout/android.widget"
+                                                                             ".LinearLayout/android.widget"
+                                                                             ".LinearLayout[1]")
+        return DataWatermarkPhotoSave
+
+    def GetDataWatermarkPhotoSeePhoto(self):
+        GetDataWatermarkPhotoSeePhoto = self.driver.find_element(by=By.XPATH, value="/hierarchy/android.widget"
+                                                                                    ".FrameLayout/android.widget"
+                                                                                    ".LinearLayout/android.widget"
+                                                                                    ".FrameLayout/android.widget"
+                                                                                    ".LinearLayout/android.widget"
+                                                                                    ".FrameLayout/android.widget"
+                                                                                    ".RelativeLayout/android.widget"
+                                                                                    ".RelativeLayout["
+                                                                                    "2]/android.widget.TextView[3]")
+        return GetDataWatermarkPhotoSeePhoto
+
     def GetDataWatermarkPhotoBack(self):  # 水印照片返回按钮
         DataWatermarkPhotoBack = self.driver.find_element(by=By.XPATH, value="//android.widget.FrameLayout["
                                                                              "1]/android.widget.LinearLayout["
@@ -1758,7 +1826,7 @@ class Me:
                                                                              "1]/android.widget.TextView[2]")
         return MeFeedBackQuestionType
 
-    def GetMeFeedBackQuestionList(self):
+    def GetMeFeedBackQuestionList1(self):
         MeFeedBackQuestionList = self.driver.find_element(by=By.XPATH, value="//android.widget.FrameLayout["
                                                                              "1]/android.widget.FrameLayout["
                                                                              "1]/android.widget.FrameLayout["
@@ -1766,6 +1834,106 @@ class Me:
                                                                              "1]/androidx.recyclerview.widget"
                                                                              ".RecyclerView["
                                                                              "1]/android.widget.LinearLayout[1]")
+        return MeFeedBackQuestionList
+
+    def GetMeFeedBackQuestionList2(self):
+        MeFeedBackQuestionList = self.driver.find_element(by=By.XPATH, value="//android.widget.FrameLayout["
+                                                                             "1]/android.widget.FrameLayout["
+                                                                             "1]/android.widget.FrameLayout["
+                                                                             "1]/android.widget.LinearLayout["
+                                                                             "1]/androidx.recyclerview.widget"
+                                                                             ".RecyclerView["
+                                                                             "1]/android.widget.LinearLayout[2]")
+        return MeFeedBackQuestionList
+
+    def GetMeFeedBackQuestionList3(self):
+        MeFeedBackQuestionList = self.driver.find_element(by=By.XPATH, value="//android.widget.FrameLayout["
+                                                                             "1]/android.widget.FrameLayout["
+                                                                             "1]/android.widget.FrameLayout["
+                                                                             "1]/android.widget.LinearLayout["
+                                                                             "1]/androidx.recyclerview.widget"
+                                                                             ".RecyclerView["
+                                                                             "1]/android.widget.LinearLayout[3]")
+        return MeFeedBackQuestionList
+
+    def GetMeFeedBackQuestionList4(self):
+        MeFeedBackQuestionList = self.driver.find_element(by=By.XPATH, value="//android.widget.FrameLayout["
+                                                                             "1]/android.widget.FrameLayout["
+                                                                             "1]/android.widget.FrameLayout["
+                                                                             "1]/android.widget.LinearLayout["
+                                                                             "1]/androidx.recyclerview.widget"
+                                                                             ".RecyclerView["
+                                                                             "1]/android.widget.LinearLayout[4]")
+        return MeFeedBackQuestionList
+
+    def GetMeFeedBackQuestionList5(self):
+        MeFeedBackQuestionList = self.driver.find_element(by=By.XPATH, value="//android.widget.FrameLayout["
+                                                                             "1]/android.widget.FrameLayout["
+                                                                             "1]/android.widget.FrameLayout["
+                                                                             "1]/android.widget.LinearLayout["
+                                                                             "1]/androidx.recyclerview.widget"
+                                                                             ".RecyclerView["
+                                                                             "1]/android.widget.LinearLayout[5]")
+        return MeFeedBackQuestionList
+
+    def GetMeFeedBackQuestionList6(self):
+        MeFeedBackQuestionList = self.driver.find_element(by=By.XPATH, value="//android.widget.FrameLayout["
+                                                                             "1]/android.widget.FrameLayout["
+                                                                             "1]/android.widget.FrameLayout["
+                                                                             "1]/android.widget.LinearLayout["
+                                                                             "1]/androidx.recyclerview.widget"
+                                                                             ".RecyclerView["
+                                                                             "1]/android.widget.LinearLayout[6]")
+        return MeFeedBackQuestionList
+
+    def GetMeFeedBackQuestionList7(self):
+        MeFeedBackQuestionList = self.driver.find_element(by=By.XPATH, value="//android.widget.FrameLayout["
+                                                                             "1]/android.widget.FrameLayout["
+                                                                             "1]/android.widget.FrameLayout["
+                                                                             "1]/android.widget.LinearLayout["
+                                                                             "1]/androidx.recyclerview.widget"
+                                                                             ".RecyclerView["
+                                                                             "1]/android.widget.LinearLayout[7]")
+        return MeFeedBackQuestionList
+
+    def GetMeFeedBackQuestionList8(self):
+        MeFeedBackQuestionList = self.driver.find_element(by=By.XPATH, value="//android.widget.FrameLayout["
+                                                                             "1]/android.widget.FrameLayout["
+                                                                             "1]/android.widget.FrameLayout["
+                                                                             "1]/android.widget.LinearLayout["
+                                                                             "1]/androidx.recyclerview.widget"
+                                                                             ".RecyclerView["
+                                                                             "1]/android.widget.LinearLayout[8]")
+        return MeFeedBackQuestionList
+
+    def GetMeFeedBackQuestionList9(self):
+        MeFeedBackQuestionList = self.driver.find_element(by=By.XPATH, value="//android.widget.FrameLayout["
+                                                                             "1]/android.widget.FrameLayout["
+                                                                             "1]/android.widget.FrameLayout["
+                                                                             "1]/android.widget.LinearLayout["
+                                                                             "1]/androidx.recyclerview.widget"
+                                                                             ".RecyclerView["
+                                                                             "1]/android.widget.LinearLayout[9]")
+        return MeFeedBackQuestionList
+
+    def GetMeFeedBackQuestionLista(self):
+        MeFeedBackQuestionList = self.driver.find_element(by=By.XPATH, value="//android.widget.FrameLayout["
+                                                                             "1]/android.widget.FrameLayout["
+                                                                             "1]/android.widget.FrameLayout["
+                                                                             "1]/android.widget.LinearLayout["
+                                                                             "1]/androidx.recyclerview.widget"
+                                                                             ".RecyclerView["
+                                                                             "1]/android.widget.LinearLayout[10]")
+        return MeFeedBackQuestionList
+
+    def GetMeFeedBackQuestionListb(self):
+        MeFeedBackQuestionList = self.driver.find_element(by=By.XPATH, value="//android.widget.FrameLayout["
+                                                                             "1]/android.widget.FrameLayout["
+                                                                             "1]/android.widget.FrameLayout["
+                                                                             "1]/android.widget.LinearLayout["
+                                                                             "1]/androidx.recyclerview.widget"
+                                                                             ".RecyclerView["
+                                                                             "1]/android.widget.LinearLayout[11]")
         return MeFeedBackQuestionList
 
     def GetMeFeedBackQuestionText(self):

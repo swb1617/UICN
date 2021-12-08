@@ -140,7 +140,43 @@ class test_UI(unittest.TestCase):
             raise
 
     @unittest.skip
-    def test_ExportData(self):
+    def test_ExportDataFit(self):  # 导出数据
+        try:
+            Tap.GetToHome(self).click()
+            Menu.GetMenuFirstData(self).click()
+            time.sleep(3)
+            Data.GetDataMenuInfo(self).click()
+            Data.GetDataMenuToExportFile(self).click()
+            Data.GetDataExportDataFit(self).click()
+            Data.GetDataExportDataDowload(self).click()
+            Data.GetDataExportDataSave(self).click()  # 荣耀手机的view
+            time.sleep(3)
+            Data.GetDataExportDataBack(self).click()
+            Data.GetDataBack(self).click()
+        except:
+            self.driver.save_screenshot('ExportDataFitError.png')
+            raise
+
+    @unittest.skip
+    def test_ExportDataGpx(self):  # 导出数据
+        try:
+            Tap.GetToHome(self).click()
+            Menu.GetMenuFirstData(self).click()
+            time.sleep(3)
+            Data.GetDataMenuInfo(self).click()
+            Data.GetDataMenuToExportFile(self).click()
+            Data.GetDataExportDataGpx(self).click()
+            Data.GetDataExportDataDowload(self).click()
+            Data.GetDataExportDataSave(self).click()  # 荣耀手机的view
+            time.sleep(3)
+            Data.GetDataExportDataBack(self).click()
+            Data.GetDataBack(self).click()
+        except:
+            self.driver.save_screenshot('ExportDataGpxError.png')
+            raise
+
+    @unittest.skip
+    def test_ExportDataTcx(self):  # 导出数据
         try:
             Tap.GetToHome(self).click()
             Menu.GetMenuFirstData(self).click()
@@ -149,26 +185,12 @@ class test_UI(unittest.TestCase):
             Data.GetDataMenuToExportFile(self).click()
             Data.GetDataExportDataTcx(self).click()
             Data.GetDataExportDataDowload(self).click()
-            Data.GetDataExportDataSave(self).click()  # X7的view
-            self.GetToast("保存成功！")
+            Data.GetDataExportDataSave(self).click()  # 荣耀手机的view
             time.sleep(3)
             Data.GetDataExportDataBack(self).click()
             Data.GetDataBack(self).click()
         except:
-            self.driver.save_screenshot('ExportDataError.png')
-            raise
-
-    def test_DataEdit(self):
-        try:
-            Tap.GetToHome(self).click()
-            Menu.GetMenuFirstData(self).click()
-            time.sleep(3)
-            Data.GetDataMenuInfo(self).click()
-            Data.GetDataMenuToEditActivity(self).click()
-            Data.GetDataEditSave(self).click()
-            Data.GetDataBack(self).click()
-        except:
-            self.driver.save_screenshot('DataEditError.png')
+            self.driver.save_screenshot('ExportDataTcxError.png')
             raise
 
     @unittest.skip("删除数据")
@@ -185,32 +207,256 @@ class test_UI(unittest.TestCase):
             self.driver.save_screenshot('DeleteDataError.png')
             raise
 
-    @unittest.skip("国内版")
-    def test_ShareWatermark(self):
+    def test_ShareWatermarkData(self):  # 分享水印照片
         try:
             Tap.GetToHome(self).click()
             Menu.GetMenuFirstData(self).click()
-            time.sleep(3)
+            time.sleep(8)
             Data.GetDataShare(self).click()
-            time.sleep(1)
+            time.sleep(2)
             Data.GetDataShareWatermarkPhoto(self).click()
-            Data.GetDataWatermarkPhotoTrack(self).click()
-            Data.GetDataWatermarkPhotoAlt(self).click()
+            # Data.GetDataWatermarkPhotoTrack(self).click()
+            # Data.GetDataWatermarkPhotoAlt(self).click()
             Data.GetDataWatermarkPhotoData(self).click()
+            Data.GetDataWatermarkPhotoSave(self).click()
+            # Data.GetDataWatermarkPhotoChangePhoto(self).click()
+            # Data.GetDataWatermarkPhotoChoosePhoto(self).click()
+            # Data.GetDataWatermarkPhotoSeePhoto(self).click()
+            # time.sleep(1)
+            # Data.GetDataWatermarkPhotoSave(self).click()
+            # time.sleep(1)
+            # Data.GetDataWatermarkRestoreDefault(self).click()
+            # Data.GetDataWatermarkPhotoSave(self).click()
+            time.sleep(2)
             Data.GetDataWatermarkPhotoBack(self).click()
             Data.GetDataShareBack(self).click()
             Data.GetDataBack(self).click()
         except:
-            self.driver.save_screenshot('ShareWatermarkError.png')
+            self.driver.save_screenshot('ShareWatermarkDataError.png')
             raise
 
-    def test_Calendar(self):
+    def test_ShareWatermarkDataDefault(self):  # 分享水印照片
         try:
-            Tap.GetToActivity(self).click()
-            Activity.GetActivityCalendarInfo(self).click()
-            Activity.GetActivityCalendarBack(self).click()
+            Tap.GetToHome(self).click()
+            Menu.GetMenuFirstData(self).click()
+            time.sleep(8)
+            Data.GetDataShare(self).click()
+            time.sleep(2)
+            Data.GetDataShareWatermarkPhoto(self).click()
+            # Data.GetDataWatermarkPhotoTrack(self).click()
+            # Data.GetDataWatermarkPhotoAlt(self).click()
+            Data.GetDataWatermarkPhotoData(self).click()
+            Data.GetDataWatermarkPhotoChangePhoto(self).click()
+            Data.GetDataWatermarkPhotoChoosePhoto(self).click()
+            Data.GetDataWatermarkPhotoSeePhoto(self).click()
+            time.sleep(1)
+            Data.GetDataWatermarkPhotoSave(self).click()
+            time.sleep(1)
+            Data.GetDataWatermarkRestoreDefault(self).click()
+            Data.GetDataWatermarkPhotoSave(self).click()
+            time.sleep(2)
+            Data.GetDataWatermarkPhotoBack(self).click()
+            Data.GetDataShareBack(self).click()
+            Data.GetDataBack(self).click()
         except:
-            self.driver.save_screenshot('ShareWatermarkError.png')
+            self.driver.save_screenshot('ShareWatermarkDataDefaultError.png')
+            raise
+
+    def test_ShareWatermarkDataChoose(self):  # 分享水印照片
+        try:
+            Tap.GetToHome(self).click()
+            Menu.GetMenuFirstData(self).click()
+            time.sleep(8)
+            Data.GetDataShare(self).click()
+            time.sleep(2)
+            Data.GetDataShareWatermarkPhoto(self).click()
+            # Data.GetDataWatermarkPhotoTrack(self).click()
+            # Data.GetDataWatermarkPhotoAlt(self).click()
+            Data.GetDataWatermarkPhotoData(self).click()
+            Data.GetDataWatermarkPhotoChangePhoto(self).click()
+            Data.GetDataWatermarkPhotoChoosePhoto(self).click()
+            Data.GetDataWatermarkPhotoSeePhoto(self).click()
+            time.sleep(1)
+            Data.GetDataWatermarkPhotoSave(self).click()
+            # time.sleep(1)
+            # Data.GetDataWatermarkRestoreDefault(self).click()
+            # Data.GetDataWatermarkPhotoSave(self).click()
+            time.sleep(2)
+            Data.GetDataWatermarkPhotoBack(self).click()
+            Data.GetDataShareBack(self).click()
+            Data.GetDataBack(self).click()
+        except:
+            self.driver.save_screenshot('ShareWatermarkDataChooseError.png')
+            raise
+
+    def test_ShareWatermarkTrack(self):  # 分享水印照片
+        try:
+            Tap.GetToHome(self).click()
+            Menu.GetMenuFirstData(self).click()
+            time.sleep(8)
+            Data.GetDataShare(self).click()
+            time.sleep(2)
+            Data.GetDataShareWatermarkPhoto(self).click()
+            Data.GetDataWatermarkPhotoTrack(self).click()
+            # Data.GetDataWatermarkPhotoAlt(self).click()
+            # Data.GetDataWatermarkPhotoData(self).click()
+            Data.GetDataWatermarkPhotoSave(self).click()
+            # Data.GetDataWatermarkPhotoChangePhoto(self).click()
+            # Data.GetDataWatermarkPhotoChoosePhoto(self).click()
+            # Data.GetDataWatermarkPhotoSeePhoto(self).click()
+            time.sleep(1)
+            Data.GetDataWatermarkPhotoSave(self).click()
+            # time.sleep(1)
+            # Data.GetDataWatermarkRestoreDefault(self).click()
+            # time.sleep(1)
+            # Data.GetDataWatermarkPhotoSave(self).click()
+            time.sleep(2)
+            Data.GetDataWatermarkPhotoBack(self).click()
+            Data.GetDataShareBack(self).click()
+            Data.GetDataBack(self).click()
+        except:
+            self.driver.save_screenshot('ShareWatermarkTrackError.png')
+            raise
+
+    def test_ShareWatermarkTrackDefault(self):  # 分享水印照片
+        try:
+            Tap.GetToHome(self).click()
+            Menu.GetMenuFirstData(self).click()
+            time.sleep(8)
+            Data.GetDataShare(self).click()
+            time.sleep(2)
+            Data.GetDataShareWatermarkPhoto(self).click()
+            Data.GetDataWatermarkPhotoTrack(self).click()
+            # Data.GetDataWatermarkPhotoAlt(self).click()
+            # Data.GetDataWatermarkPhotoData(self).click()
+            # Data.GetDataWatermarkPhotoSave(self).click()
+            Data.GetDataWatermarkPhotoChangePhoto(self).click()
+            Data.GetDataWatermarkPhotoChoosePhoto(self).click()
+            Data.GetDataWatermarkPhotoSeePhoto(self).click()
+            time.sleep(1)
+            Data.GetDataWatermarkPhotoSave(self).click()
+            time.sleep(1)
+            Data.GetDataWatermarkRestoreDefault(self).click()
+            time.sleep(1)
+            Data.GetDataWatermarkPhotoSave(self).click()
+            time.sleep(2)
+            Data.GetDataWatermarkPhotoBack(self).click()
+            Data.GetDataShareBack(self).click()
+            Data.GetDataBack(self).click()
+        except:
+            self.driver.save_screenshot('ShareWatermarkTrackDefaultError.png')
+            raise
+
+    def test_ShareWatermarkTrackChoose(self):  # 分享水印照片
+        try:
+            Tap.GetToHome(self).click()
+            Menu.GetMenuFirstData(self).click()
+            time.sleep(8)
+            Data.GetDataShare(self).click()
+            time.sleep(2)
+            Data.GetDataShareWatermarkPhoto(self).click()
+            Data.GetDataWatermarkPhotoTrack(self).click()
+            # Data.GetDataWatermarkPhotoAlt(self).click()
+            # Data.GetDataWatermarkPhotoData(self).click()
+            # Data.GetDataWatermarkPhotoSave(self).click()
+            Data.GetDataWatermarkPhotoChangePhoto(self).click()
+            Data.GetDataWatermarkPhotoChoosePhoto(self).click()
+            Data.GetDataWatermarkPhotoSeePhoto(self).click()
+            time.sleep(1)
+            Data.GetDataWatermarkPhotoSave(self).click()
+            # time.sleep(1)
+            # Data.GetDataWatermarkRestoreDefault(self).click()
+            # time.sleep(1)
+            # Data.GetDataWatermarkPhotoSave(self).click()
+            time.sleep(2)
+            Data.GetDataWatermarkPhotoBack(self).click()
+            Data.GetDataShareBack(self).click()
+            Data.GetDataBack(self).click()
+        except:
+            self.driver.save_screenshot('ShareWatermarkTrackChooseError.png')
+            raise
+
+    def test_ShareWatermarkAlt(self):  # 分享水印照片
+        try:
+            Tap.GetToHome(self).click()
+            Menu.GetMenuFirstData(self).click()
+            time.sleep(8)
+            Data.GetDataShare(self).click()
+            time.sleep(3)
+            Data.GetDataShareWatermarkPhoto(self).click()
+            # Data.GetDataWatermarkPhotoTrack(self).click()
+            Data.GetDataWatermarkPhotoAlt(self).click()
+            # Data.GetDataWatermarkPhotoData(self).click()
+            Data.GetDataWatermarkPhotoSave(self).click()
+            Data.GetDataWatermarkPhotoChangePhoto(self).click()
+            Data.GetDataWatermarkPhotoChoosePhoto(self).click()
+            Data.GetDataWatermarkPhotoSeePhoto(self).click()
+            Data.GetDataWatermarkPhotoSave(self).click()
+            time.sleep(1)
+            Data.GetDataWatermarkRestoreDefault(self).click()
+            Data.GetDataWatermarkPhotoSave(self).click()
+            time.sleep(2)
+            Data.GetDataWatermarkPhotoBack(self).click()
+            Data.GetDataShareBack(self).click()
+            Data.GetDataBack(self).click()
+        except:
+            self.driver.save_screenshot('ShareWatermarkAltError.png')
+            raise
+
+    def test_ShareWatermarkAltDefault(self):  # 分享水印照片
+        try:
+            Tap.GetToHome(self).click()
+            Menu.GetMenuFirstData(self).click()
+            time.sleep(8)
+            Data.GetDataShare(self).click()
+            time.sleep(3)
+            Data.GetDataShareWatermarkPhoto(self).click()
+            # Data.GetDataWatermarkPhotoTrack(self).click()
+            Data.GetDataWatermarkPhotoAlt(self).click()
+            # Data.GetDataWatermarkPhotoData(self).click()
+            # Data.GetDataWatermarkPhotoSave(self).click()
+            Data.GetDataWatermarkPhotoChangePhoto(self).click()
+            Data.GetDataWatermarkPhotoChoosePhoto(self).click()
+            Data.GetDataWatermarkPhotoSeePhoto(self).click()
+            Data.GetDataWatermarkPhotoSave(self).click()
+            time.sleep(1)
+            Data.GetDataWatermarkRestoreDefault(self).click()
+            Data.GetDataWatermarkPhotoSave(self).click()
+            time.sleep(2)
+            Data.GetDataWatermarkPhotoBack(self).click()
+            Data.GetDataShareBack(self).click()
+            Data.GetDataBack(self).click()
+        except:
+            self.driver.save_screenshot('ShareWatermarkAltDefaultError.png')
+            raise
+
+    def test_ShareWatermarkAltChoose(self):  # 分享水印照片
+        try:
+            Tap.GetToHome(self).click()
+            Menu.GetMenuFirstData(self).click()
+            time.sleep(8)
+            Data.GetDataShare(self).click()
+            time.sleep(3)
+            Data.GetDataShareWatermarkPhoto(self).click()
+            # Data.GetDataWatermarkPhotoTrack(self).click()
+            Data.GetDataWatermarkPhotoAlt(self).click()
+            # Data.GetDataWatermarkPhotoData(self).click()
+            # Data.GetDataWatermarkPhotoSave(self).click()
+            Data.GetDataWatermarkPhotoChangePhoto(self).click()
+            Data.GetDataWatermarkPhotoChoosePhoto(self).click()
+            Data.GetDataWatermarkPhotoSeePhoto(self).click()
+            Data.GetDataWatermarkPhotoSave(self).click()
+            # time.sleep(1)
+            # Data.GetDataWatermarkRestoreDefault(self).click()
+            # Data.GetDataWatermarkPhotoSave(self).click()
+            time.sleep(2)
+            Data.GetDataWatermarkPhotoBack(self).click()
+            Data.GetDataShareBack(self).click()
+            Data.GetDataBack(self).click()
+        except:
+            self.driver.save_screenshot('ShareWatermarkAltChooseError.png')
+            raise
+
 
     def test_ActivityShare(self):
         try:
@@ -278,7 +524,7 @@ class test_UI(unittest.TestCase):
             self.driver.save_screenshot('AboutUsError.png')
             raise
 
-    def test_FeedBack(self):
+    def test_FeedBack1(self):  # 反馈界面
         try:
             QuestionName = 'test'
             Tap.GetToMe(self).click()
@@ -287,7 +533,7 @@ class test_UI(unittest.TestCase):
             Me.GetMeAfterSaleServiceFeedBack(self).click()
             time.sleep(1)
             Me.GetMeFeedBackQuestionType(self).click()
-            Me.GetMeFeedBackQuestionList(self).click()
+            Me.GetMeFeedBackQuestionList1(self).click()
             Me.GetMeFeedBackQuestionText(self).click()
             Me.GetMeFeedBackQuestionText(self).send_keys(QuestionName)
             time.sleep(1)
@@ -300,10 +546,290 @@ class test_UI(unittest.TestCase):
             Me.GetMeFeedBackPictureSave(self).click()
             time.sleep(1)
             Me.GetMeFeedBackSubmit(self).click()
-            self.GetToast("上传成功")
+            time.sleep(10)
             Me.GetMeAfterSaleServiceBack(self).click()
         except:
-            self.driver.save_screenshot('FeedBackError.png')
+            self.driver.save_screenshot('FeedBack1Error.png')
+            raise
+
+    def test_FeedBack2(self):  # 反馈界面
+        try:
+            QuestionName = 'test'
+            Tap.GetToMe(self).click()
+            Me.GetMeAfterSaleServiceInfo(self).click()
+            time.sleep(2)
+            Me.GetMeAfterSaleServiceFeedBack(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackQuestionType(self).click()
+            Me.GetMeFeedBackQuestionList2(self).click()
+            Me.GetMeFeedBackQuestionText(self).click()
+            Me.GetMeFeedBackQuestionText(self).send_keys(QuestionName)
+            time.sleep(1)
+            Me.GetMeFeedBackTLEText(self).send_keys(123456)
+            time.sleep(1)
+            Me.GetMeFeedBackPictureAdd(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackPictureChoose(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackPictureSave(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackSubmit(self).click()
+            time.sleep(10)
+            Me.GetMeAfterSaleServiceBack(self).click()
+        except:
+            self.driver.save_screenshot('FeedBack2Error.png')
+            raise
+
+    def test_FeedBack3(self):  # 反馈界面
+        try:
+            QuestionName = 'test'
+            Tap.GetToMe(self).click()
+            Me.GetMeAfterSaleServiceInfo(self).click()
+            time.sleep(2)
+            Me.GetMeAfterSaleServiceFeedBack(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackQuestionType(self).click()
+            Me.GetMeFeedBackQuestionList3(self).click()
+            Me.GetMeFeedBackQuestionText(self).click()
+            Me.GetMeFeedBackQuestionText(self).send_keys(QuestionName)
+            time.sleep(1)
+            Me.GetMeFeedBackTLEText(self).send_keys(123456)
+            time.sleep(1)
+            Me.GetMeFeedBackPictureAdd(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackPictureChoose(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackPictureSave(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackSubmit(self).click()
+            time.sleep(10)
+            Me.GetMeAfterSaleServiceBack(self).click()
+        except:
+            self.driver.save_screenshot('FeedBack3Error.png')
+            raise
+
+    def test_FeedBack4(self):  # 反馈界面
+        try:
+            QuestionName = 'test'
+            Tap.GetToMe(self).click()
+            Me.GetMeAfterSaleServiceInfo(self).click()
+            time.sleep(2)
+            Me.GetMeAfterSaleServiceFeedBack(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackQuestionType(self).click()
+            Me.GetMeFeedBackQuestionList4(self).click()
+            Me.GetMeFeedBackQuestionText(self).click()
+            Me.GetMeFeedBackQuestionText(self).send_keys(QuestionName)
+            time.sleep(1)
+            Me.GetMeFeedBackTLEText(self).send_keys(123456)
+            time.sleep(1)
+            Me.GetMeFeedBackPictureAdd(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackPictureChoose(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackPictureSave(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackSubmit(self).click()
+            time.sleep(10)
+            Me.GetMeAfterSaleServiceBack(self).click()
+        except:
+            self.driver.save_screenshot('FeedBack4Error.png')
+            raise
+
+    def test_FeedBack5(self):  # 反馈界面
+        try:
+            QuestionName = 'test'
+            Tap.GetToMe(self).click()
+            Me.GetMeAfterSaleServiceInfo(self).click()
+            time.sleep(2)
+            Me.GetMeAfterSaleServiceFeedBack(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackQuestionType(self).click()
+            Me.GetMeFeedBackQuestionList5(self).click()
+            Me.GetMeFeedBackQuestionText(self).click()
+            Me.GetMeFeedBackQuestionText(self).send_keys(QuestionName)
+            time.sleep(1)
+            Me.GetMeFeedBackTLEText(self).send_keys(123456)
+            time.sleep(1)
+            Me.GetMeFeedBackPictureAdd(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackPictureChoose(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackPictureSave(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackSubmit(self).click()
+            time.sleep(10)
+            Me.GetMeAfterSaleServiceBack(self).click()
+        except:
+            self.driver.save_screenshot('FeedBack5Error.png')
+            raise
+
+    def test_FeedBack6(self):  # 反馈界面
+        try:
+            QuestionName = 'test'
+            Tap.GetToMe(self).click()
+            Me.GetMeAfterSaleServiceInfo(self).click()
+            time.sleep(2)
+            Me.GetMeAfterSaleServiceFeedBack(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackQuestionType(self).click()
+            Me.GetMeFeedBackQuestionList6(self).click()
+            Me.GetMeFeedBackQuestionText(self).click()
+            Me.GetMeFeedBackQuestionText(self).send_keys(QuestionName)
+            time.sleep(1)
+            Me.GetMeFeedBackTLEText(self).send_keys(123456)
+            time.sleep(1)
+            Me.GetMeFeedBackPictureAdd(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackPictureChoose(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackPictureSave(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackSubmit(self).click()
+            time.sleep(10)
+            Me.GetMeAfterSaleServiceBack(self).click()
+        except:
+            self.driver.save_screenshot('FeedBack6Error.png')
+            raise
+
+    def test_FeedBack7(self):  # 反馈界面
+        try:
+            QuestionName = 'test'
+            Tap.GetToMe(self).click()
+            Me.GetMeAfterSaleServiceInfo(self).click()
+            time.sleep(2)
+            Me.GetMeAfterSaleServiceFeedBack(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackQuestionType(self).click()
+            Me.GetMeFeedBackQuestionList7(self).click()
+            Me.GetMeFeedBackQuestionText(self).click()
+            Me.GetMeFeedBackQuestionText(self).send_keys(QuestionName)
+            time.sleep(1)
+            Me.GetMeFeedBackTLEText(self).send_keys(123456)
+            time.sleep(1)
+            Me.GetMeFeedBackPictureAdd(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackPictureChoose(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackPictureSave(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackSubmit(self).click()
+            time.sleep(10)
+            Me.GetMeAfterSaleServiceBack(self).click()
+        except:
+            self.driver.save_screenshot('FeedBack7Error.png')
+            raise
+
+    def test_FeedBack8(self):  # 反馈界面
+        try:
+            QuestionName = 'test'
+            Tap.GetToMe(self).click()
+            Me.GetMeAfterSaleServiceInfo(self).click()
+            time.sleep(2)
+            Me.GetMeAfterSaleServiceFeedBack(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackQuestionType(self).click()
+            Me.GetMeFeedBackQuestionList8(self).click()
+            Me.GetMeFeedBackQuestionText(self).click()
+            Me.GetMeFeedBackQuestionText(self).send_keys(QuestionName)
+            time.sleep(1)
+            Me.GetMeFeedBackTLEText(self).send_keys(123456)
+            time.sleep(1)
+            Me.GetMeFeedBackPictureAdd(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackPictureChoose(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackPictureSave(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackSubmit(self).click()
+            time.sleep(10)
+            Me.GetMeAfterSaleServiceBack(self).click()
+        except:
+            self.driver.save_screenshot('FeedBack8Error.png')
+            raise
+
+    def test_FeedBack9(self):  # 反馈界面
+        try:
+            QuestionName = 'test'
+            Tap.GetToMe(self).click()
+            Me.GetMeAfterSaleServiceInfo(self).click()
+            time.sleep(2)
+            Me.GetMeAfterSaleServiceFeedBack(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackQuestionType(self).click()
+            Me.GetMeFeedBackQuestionList9(self).click()
+            Me.GetMeFeedBackQuestionText(self).click()
+            Me.GetMeFeedBackQuestionText(self).send_keys(QuestionName)
+            time.sleep(1)
+            Me.GetMeFeedBackTLEText(self).send_keys(123456)
+            time.sleep(1)
+            Me.GetMeFeedBackPictureAdd(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackPictureChoose(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackPictureSave(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackSubmit(self).click()
+            time.sleep(10)
+            Me.GetMeAfterSaleServiceBack(self).click()
+        except:
+            self.driver.save_screenshot('FeedBack9Error.png')
+            raise
+
+    def test_FeedBacka(self):  # 反馈界面
+        try:
+            QuestionName = 'test'
+            Tap.GetToMe(self).click()
+            Me.GetMeAfterSaleServiceInfo(self).click()
+            time.sleep(2)
+            Me.GetMeAfterSaleServiceFeedBack(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackQuestionType(self).click()
+            Me.GetMeFeedBackQuestionLista(self).click()
+            Me.GetMeFeedBackQuestionText(self).click()
+            Me.GetMeFeedBackQuestionText(self).send_keys(QuestionName)
+            time.sleep(1)
+            Me.GetMeFeedBackTLEText(self).send_keys(123456)
+            time.sleep(1)
+            Me.GetMeFeedBackPictureAdd(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackPictureChoose(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackPictureSave(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackSubmit(self).click()
+            time.sleep(10)
+            Me.GetMeAfterSaleServiceBack(self).click()
+        except:
+            self.driver.save_screenshot('FeedBackaError.png')
+            raise
+
+    def test_FeedBackb(self):  # 反馈界面
+        try:
+            QuestionName = 'test'
+            Tap.GetToMe(self).click()
+            Me.GetMeAfterSaleServiceInfo(self).click()
+            time.sleep(2)
+            Me.GetMeAfterSaleServiceFeedBack(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackQuestionType(self).click()
+            Me.GetMeFeedBackQuestionListb(self).click()
+            Me.GetMeFeedBackQuestionText(self).click()
+            Me.GetMeFeedBackQuestionText(self).send_keys(QuestionName)
+            time.sleep(1)
+            Me.GetMeFeedBackTLEText(self).send_keys(123456)
+            time.sleep(1)
+            Me.GetMeFeedBackPictureAdd(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackPictureChoose(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackPictureSave(self).click()
+            time.sleep(1)
+            Me.GetMeFeedBackSubmit(self).click()
+            time.sleep(10)
+            Me.GetMeAfterSaleServiceBack(self).click()
+        except:
+            self.driver.save_screenshot('FeedBackbError.png')
             raise
 
     def test_ActivityChangeGoals(self):

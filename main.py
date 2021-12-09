@@ -89,10 +89,13 @@ class test_UI(unittest.TestCase):
             raise
 
     def test_MenuGoals(self):
+        MonthGoals = 777
         try:
             Tap.GetToHome(self).click()
             Menu.GetMenuTrainingGoalsInto(self).click()
             Me.GetMeUserGoalsText(self).click()
+            Me.GetMeUserGoalsText(self).clear()
+            Me.GetMeUserGoalsText(self).send_keys(MonthGoals)
             Me.GetMeUserGoalsSave(self).click()
             Me.GetMeUserDetailsBack(self).click()
         except:

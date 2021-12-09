@@ -486,12 +486,12 @@ class test_UI(unittest.TestCase):
             self.driver.save_screenshot('ActivityShareError.png')
             raise
 
-    def test_StatisicData(self):
+    def test_StatisticData(self):
         try:
             Tap.GetToActivity(self).click()
-            Activity.GetActivityDataStatisicInfo(self).click()
+            Activity.GetActivityDataStatisticInfo(self).click()
             time.sleep(1)
-            Activity.GetActivityDataStatisicBack(self).click()
+            Activity.GetActivityDataStatisticBack(self).click()
         except:
             self.driver.save_screenshot('StatisicDataError.png')
             raise
@@ -971,10 +971,10 @@ class test_UI(unittest.TestCase):
         try:
             Tap.GetToActivity(self).click()
             ActivityDistance = Activity.GetActivityTotalDistance(self).text
-            Activity.GetActivityDataStatisicInfo(self).click()
-            Activity.GetActivityDataStatisicAll(self).click()
-            ActivityDistances = Activity.GetActivityDataStatisicAllDistances(self).text
-            Activity.GetActivityDataStatisicBack(self).click()
+            Activity.GetActivityDataStatisticInfo(self).click()
+            Activity.GetActivityDataStatisticAll(self).click()
+            ActivityDistances = Activity.GetActivityDataStatisticAllDistances(self).text
+            Activity.GetActivityDataStatisticBack(self).click()
             self.assertEqual(ActivityDistance, ActivityDistances)
         except:
             self.driver.save_screenshot('AccumulatedMileageConsistencyError.png')
@@ -984,10 +984,10 @@ class test_UI(unittest.TestCase):
         try:
             Tap.GetToActivity(self).click()
             ActivityFrequency = Activity.GetActivityTotalFrequency(self).text
-            Activity.GetActivityDataStatisicInfo(self).click()
-            Activity.GetActivityDataStatisicAll(self).click()
-            ActivityFrequencys = Activity.GetActivityDataStatisicAllFrequency(self).text
-            Activity.GetActivityDataStatisicBack(self).click()
+            Activity.GetActivityDataStatisticInfo(self).click()
+            Activity.GetActivityDataStatisticAll(self).click()
+            ActivityFrequencys = Activity.GetActivityDataStatisticAllFrequency(self).text
+            Activity.GetActivityDataStatisticBack(self).click()
             self.assertEqual(ActivityFrequencys, ActivityFrequency)
         except:
             self.driver.save_screenshot('CumulativeTimesConsistencyError.png')
@@ -997,10 +997,10 @@ class test_UI(unittest.TestCase):
         try:
             Tap.GetToActivity(self).click()
             ActivityAverageVelocity = Activity.GetActivityTotalAverageVelocity(self).text
-            Activity.GetActivityDataStatisicInfo(self).click()
-            Activity.GetActivityDataStatisicAll(self).click()
-            ActivityAverageVelocitys = Activity.GetActivityDataStatisicAllAverageVelocity(self).text
-            Activity.GetActivityDataStatisicBack(self).click()
+            Activity.GetActivityDataStatisticInfo(self).click()
+            Activity.GetActivityDataStatisticAll(self).click()
+            ActivityAverageVelocitys = Activity.GetActivityDataStatisticAllAverageVelocity(self).text
+            Activity.GetActivityDataStatisticBack(self).click()
             self.assertIn(ActivityAverageVelocity, ActivityAverageVelocitys)
         except:
             self.driver.save_screenshot('AverageVelocityConsistencyError.png')
@@ -1011,12 +1011,12 @@ class test_UI(unittest.TestCase):
         try:
             Tap.GetToActivity(self).click()
             ActivityMonthFrequency = Activity.GetActivityMonthFrequency(self).text
-            Activity.GetActivityDataStatisicInfo(self).click()
+            Activity.GetActivityDataStatisticInfo(self).click()
             time.sleep(1)
-            Activity.GetActivityDataStatisicMonth(self).click()
+            Activity.GetActivityDataStatisticMonth(self).click()
             time.sleep(2)
-            ActivityDataStatisicMonthFrequency = Activity.GetActivityDataStatisicMonthFrequency(self).text
-            Activity.GetActivityDataStatisicBack(self).click()
+            ActivityDataStatisicMonthFrequency = Activity.GetActivityDataStatisticMonthFrequency(self).text
+            Activity.GetActivityDataStatisticBack(self).click()
             self.assertEqual(ActivityDataStatisicMonthFrequency, ActivityMonthFrequency)
         except:
             self.driver.save_screenshot('MonthlyCyclingTimesError.png')

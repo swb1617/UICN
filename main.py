@@ -10,7 +10,7 @@ from appium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 
-from buttin import ComposeTest, Me, Menu, Message, Activity, Tap, Data
+from buttin import ComposeTest, Me, Menu, Message, Activity, Tap, Data, People, Follow, Friend
 
 
 class test_UI(unittest.TestCase):
@@ -39,9 +39,9 @@ class test_UI(unittest.TestCase):
             'noReset': True,
             'newCommandTimeout': 6000,
             # 更换底层驱动
-            'automationName': 'UiAutomator2',
-            'unicodeKeyboard': True,  # 修改手机的输入法
-            'resetKeyboard': True
+            'automationName': 'UiAutomator2'
+            # 'unicodeKeyboard': True,  # 修改手机的输入法
+            # 'resetKeyboard': True
         }
         cls.driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
 
@@ -63,6 +63,15 @@ class test_UI(unittest.TestCase):
         time.sleep(2)
         self.driver.swipe(x1, y1, x2, y2, 1000)  # 滑动方法
 
+    def SwipeFriendLeft(self):  # 定义下滑动方法
+        size = self.driver.get_window_size()
+        width = size['width']
+        height = size['height']
+        x1, x2 = width * 0.9, width * 0.1
+        y1 = y2 = height * 0.35
+        time.sleep(2)
+        self.driver.swipe(x1, y1, x2, y2, 1000)
+
     def SwipeLittleDown(self):  # 定义上滑动方法
         size = self.driver.get_window_size()  # 获取手机屏幕尺寸
         width = size['width']
@@ -77,6 +86,15 @@ class test_UI(unittest.TestCase):
         toast_element = WebDriverWait(self.driver, 5).until(lambda x: x.find_element(by=By.XPATH, value=message))
         print(f'toast：', toast_element.text)
         assert toast_element.text == toast_message
+
+    def PressEnter(self):  # 定义回车键
+        self.driver.press_keycode(66)
+
+    def PressBack(self):  # 定义返回键
+        self.driver.keyevent(4)
+
+    def PressMoveEnd(self):  # 定义光标移动文本末尾
+        self.driver.keyevent(123)
 
     def test_MenuMessage(self):
         try:
@@ -554,6 +572,7 @@ class test_UI(unittest.TestCase):
             Me.GetMeFeedBackQuestionText(self).click()
             Me.GetMeFeedBackQuestionText(self).send_keys(QuestionName)
             time.sleep(1)
+            Me.GetMeFeedBackTitle(self).click()
             Me.GetMeFeedBackTLEText(self).send_keys(123456)
             time.sleep(1)
             Me.GetMeFeedBackPictureAdd(self).click()
@@ -582,6 +601,7 @@ class test_UI(unittest.TestCase):
             Me.GetMeFeedBackQuestionText(self).click()
             Me.GetMeFeedBackQuestionText(self).send_keys(QuestionName)
             time.sleep(1)
+            Me.GetMeFeedBackTitle(self).click()
             Me.GetMeFeedBackTLEText(self).send_keys(123456)
             time.sleep(1)
             Me.GetMeFeedBackPictureAdd(self).click()
@@ -610,6 +630,7 @@ class test_UI(unittest.TestCase):
             Me.GetMeFeedBackQuestionText(self).click()
             Me.GetMeFeedBackQuestionText(self).send_keys(QuestionName)
             time.sleep(1)
+            Me.GetMeFeedBackTitle(self).click()
             Me.GetMeFeedBackTLEText(self).send_keys(123456)
             time.sleep(1)
             Me.GetMeFeedBackPictureAdd(self).click()
@@ -638,6 +659,7 @@ class test_UI(unittest.TestCase):
             Me.GetMeFeedBackQuestionText(self).click()
             Me.GetMeFeedBackQuestionText(self).send_keys(QuestionName)
             time.sleep(1)
+            Me.GetMeFeedBackTitle(self).click()
             Me.GetMeFeedBackTLEText(self).send_keys(123456)
             time.sleep(1)
             Me.GetMeFeedBackPictureAdd(self).click()
@@ -666,6 +688,7 @@ class test_UI(unittest.TestCase):
             Me.GetMeFeedBackQuestionText(self).click()
             Me.GetMeFeedBackQuestionText(self).send_keys(QuestionName)
             time.sleep(1)
+            Me.GetMeFeedBackTitle(self).click()
             Me.GetMeFeedBackTLEText(self).send_keys(123456)
             time.sleep(1)
             Me.GetMeFeedBackPictureAdd(self).click()
@@ -694,6 +717,7 @@ class test_UI(unittest.TestCase):
             Me.GetMeFeedBackQuestionText(self).click()
             Me.GetMeFeedBackQuestionText(self).send_keys(QuestionName)
             time.sleep(1)
+            Me.GetMeFeedBackTitle(self).click()
             Me.GetMeFeedBackTLEText(self).send_keys(123456)
             time.sleep(1)
             Me.GetMeFeedBackPictureAdd(self).click()
@@ -722,6 +746,7 @@ class test_UI(unittest.TestCase):
             Me.GetMeFeedBackQuestionText(self).click()
             Me.GetMeFeedBackQuestionText(self).send_keys(QuestionName)
             time.sleep(1)
+            Me.GetMeFeedBackTitle(self).click()
             Me.GetMeFeedBackTLEText(self).send_keys(123456)
             time.sleep(1)
             Me.GetMeFeedBackPictureAdd(self).click()
@@ -750,6 +775,7 @@ class test_UI(unittest.TestCase):
             Me.GetMeFeedBackQuestionText(self).click()
             Me.GetMeFeedBackQuestionText(self).send_keys(QuestionName)
             time.sleep(1)
+            Me.GetMeFeedBackTitle(self).click()
             Me.GetMeFeedBackTLEText(self).send_keys(123456)
             time.sleep(1)
             Me.GetMeFeedBackPictureAdd(self).click()
@@ -778,6 +804,7 @@ class test_UI(unittest.TestCase):
             Me.GetMeFeedBackQuestionText(self).click()
             Me.GetMeFeedBackQuestionText(self).send_keys(QuestionName)
             time.sleep(1)
+            Me.GetMeFeedBackTitle(self).click()
             Me.GetMeFeedBackTLEText(self).send_keys(123456)
             time.sleep(1)
             Me.GetMeFeedBackPictureAdd(self).click()
@@ -806,6 +833,7 @@ class test_UI(unittest.TestCase):
             Me.GetMeFeedBackQuestionText(self).click()
             Me.GetMeFeedBackQuestionText(self).send_keys(QuestionName)
             time.sleep(1)
+            Me.GetMeFeedBackTitle(self).click()
             Me.GetMeFeedBackTLEText(self).send_keys(123456)
             time.sleep(1)
             Me.GetMeFeedBackPictureAdd(self).click()
@@ -834,6 +862,7 @@ class test_UI(unittest.TestCase):
             Me.GetMeFeedBackQuestionText(self).click()
             Me.GetMeFeedBackQuestionText(self).send_keys(QuestionName)
             time.sleep(1)
+            Me.GetMeFeedBackTitle(self).click()
             Me.GetMeFeedBackTLEText(self).send_keys(123456)
             time.sleep(1)
             Me.GetMeFeedBackPictureAdd(self).click()
@@ -1123,6 +1152,235 @@ class test_UI(unittest.TestCase):
             self.driver.save_screenshot('NoPasswordError.png')
             Me.GetMeResetPasswordBack(self).click()
             Me.GetMeAccountSettingBack(self).click()
+            raise
+
+    def test_FollowFriend(self):
+        try:
+            Tap.GetToHome(self).click()
+            Menu.GetMenuFriendInto(self).click()
+            time.sleep(5)
+            FriendName = Friend.GetFriendFirstPeopleName(self).text
+            print(FriendName)
+            FriendDistance = Friend.GetFriendFirstPeopleDistance(self).text
+            Friend.GetFriendFirstPeopleFollow(self).click()
+            Menu.GetMenuFriendBack(self).click()
+            Tap.GetToMe(self).click()
+            FollowNumber = Me.GetFollowNumber(self).text
+            self.assertEqual(1, int(FollowNumber))
+            Follow.GetFollowInfo(self).click()
+            time.sleep(2)
+            FollowName = Follow.GetFollowFirstPeopleName(self).text
+            FollowDistance = Follow.GetFollowFirstPeopleDistance(self).text
+            FollowId = Follow.GetFollowFirstPeopleId(self).text
+            self.assertEqual(FriendName, FollowName)
+            self.assertIn(FriendDistance, FollowDistance)
+            Follow.GetFollowFirstPeopleInfo(self).click()
+            time.sleep(2)
+            PeopleId = People.GetPeopleId(self).text
+            PeopleName = People.GetPeopleName(self).text
+            self.assertEqual(FollowId, PeopleId)
+            self.assertEqual(FollowName, PeopleName)
+            People.GetPeopleFollowed(self).click()
+            People.GetPeopleBack(self).click()
+            time.sleep(1)
+            Follow.GetFollowBack(self).click()
+        except:
+            self.driver.save_screenshot('FollowFriendError.png')
+            raise
+
+    def test_FollowSeekFriend(self):
+        FriendID = 148788
+        try:
+            Tap.GetToHome(self).click()
+            Menu.GetMenuFriendInto(self).click()
+            time.sleep(5)
+            Friend.GetFriendSeekFriendId(self).click()
+            Friend.GetFriendSeekText(self).click()
+            Friend.GetFriendSeekText(self).send_keys(FriendID)
+            time.sleep(1)
+            self.PressEnter()
+            time.sleep(1)
+            Friend.GetFriendSeekFriendFollow(self).click()
+            self.PressBack()
+            time.sleep(1)
+            Menu.GetMenuFriendBack(self).click()
+            Tap.GetToMe(self).click()
+            FollowNumber = Me.GetFollowNumber(self).text
+            self.assertEqual(1, int(FollowNumber))
+            Follow.GetFollowInfo(self).click()
+            time.sleep(2)
+            FollowName = Follow.GetFollowFirstPeopleName(self).text
+            FollowId = Follow.GetFollowFirstPeopleId(self).text
+            Follow.GetFollowFirstPeopleInfo(self).click()
+            time.sleep(2)
+            PeopleId = People.GetPeopleId(self).text
+            PeopleName = People.GetPeopleName(self).text
+            self.assertEqual(FollowId, PeopleId)
+            self.assertEqual(FollowName, PeopleName)
+            People.GetPeopleFollowed(self).click()
+            People.GetPeopleBack(self).click()
+            time.sleep(1)
+            Follow.GetFollowBack(self).click()
+        except:
+            self.driver.save_screenshot('FollowSeekFriendError.png')
+            raise
+
+    def test_FollowSeekNotFollowFriend(self):
+        FriendID = 148788
+        try:
+            Tap.GetToHome(self).click()
+            Menu.GetMenuFriendInto(self).click()
+            time.sleep(5)
+            Friend.GetFriendSeekFriendId(self).click()
+            Friend.GetFriendSeekText(self).click()
+            Friend.GetFriendSeekText(self).send_keys(148788)
+            time.sleep(1)
+            self.PressEnter()
+            time.sleep(1)
+            Friend.GetFriendSeekFriendFollow(self).click()
+            time.sleep(1)
+            self.PressBack()
+            time.sleep(1)
+            Friend.GetFriendSeekFriendId(self).click()
+            Friend.GetFriendSeekText(self).click()
+            Friend.GetFriendSeekText(self).send_keys(FriendID)
+            time.sleep(1)
+            self.PressEnter()
+            time.sleep(1)
+            Friend.GetFriendSeekFriendFollow(self).click()
+            self.PressBack()
+            time.sleep(1)
+            Menu.GetMenuFriendBack(self).click()
+            Tap.GetToMe(self).click()
+            FollowNumber = Me.GetFollowNumber(self).text
+            self.assertEqual(0, int(FollowNumber))
+        except:
+            self.driver.save_screenshot('FollowSeekNotFollowFriendError.png')
+            raise
+
+    def test_RecommendFriend(self):
+        try:
+            Tap.GetToHome(self).click()
+            Menu.GetMenuFriendInto(self).click()
+            time.sleep(5)
+            FirstPeopleName = Friend.GetFriendFirstPeopleName(self).text
+            SecondPeopleName = Friend.GetFriendSecondPeopleName(self).text
+            ThirdPeopleName = Friend.GetFriendThirdPeopleName(self).text
+            self.SwipeFriendLeft()
+            self.SwipeFriendLeft()
+            FourthPeopleName = Friend.GetFriendFourthPeopleName(self).text
+            FifthPeopleName = Friend.GetFriendFifthPeopleName(self).text
+            SixthPeopleName = Friend.GetFriendSixthPeopleName(self).text
+            if FirstPeopleName != SecondPeopleName != ThirdPeopleName != FourthPeopleName != FifthPeopleName != \
+                    SixthPeopleName:
+                Menu.GetMenuFriendBack(self).click()
+        except:
+            self.driver.save_screenshot('RecommendFriendError.png')
+            raise
+
+    def test_SendToFriend(self):
+        FriendID = 148788
+        try:
+            Tap.GetToHome(self).click()
+            Menu.GetMenuFriendInto(self).click()
+            time.sleep(5)
+            Friend.GetFriendSeekFriendId(self).click()
+            Friend.GetFriendSeekText(self).click()
+            Friend.GetFriendSeekText(self).send_keys(FriendID)
+            time.sleep(1)
+            self.PressEnter()
+            time.sleep(1)
+            Friend.GetFriendSeekFriendFollow(self).click()
+            self.PressBack()
+            time.sleep(1)
+            Menu.GetMenuFriendBack(self).click()
+            Tap.GetToMe(self).click()
+            FollowNumber = Me.GetFollowNumber(self).text
+            self.assertEqual(1, int(FollowNumber))
+            Tap.GetToHome(self).click()
+            Menu.GetMenuFirstData(self).click()
+            time.sleep(3)
+            Data.GetDataMenuInfo(self).click()
+            Data.GetDataMenuToSendFriend(self).click()
+            Data.GetDataSendToFriend(self).click()
+            time.sleep(3)
+            Data.GetDataSendMessageBack(self).click()
+            Data.GetDataBack(self).click()
+            Tap.GetToMe(self).click()
+            FollowNumber = Me.GetFollowNumber(self).text
+            self.assertEqual(1, int(FollowNumber))
+            Follow.GetFollowInfo(self).click()
+            time.sleep(2)
+            FollowName = Follow.GetFollowFirstPeopleName(self).text
+            FollowId = Follow.GetFollowFirstPeopleId(self).text
+            Follow.GetFollowFirstPeopleInfo(self).click()
+            time.sleep(2)
+            PeopleId = People.GetPeopleId(self).text
+            PeopleName = People.GetPeopleName(self).text
+            self.assertEqual(FollowId, PeopleId)
+            self.assertEqual(FollowName, PeopleName)
+            People.GetPeopleFollowed(self).click()
+            People.GetPeopleBack(self).click()
+            time.sleep(1)
+            Follow.GetFollowBack(self).click()
+        except:
+            self.driver.save_screenshot('SendToFriendError.png')
+            raise
+
+    def test_NoFriendSendToFriend(self):
+        try:
+            Tap.GetToMe(self).click()
+            FollowNumber = Me.GetFollowNumber(self).text
+            self.assertEqual(0, int(FollowNumber))
+            Tap.GetToHome(self).click()
+            Menu.GetMenuFirstData(self).click()
+            time.sleep(3)
+            Data.GetDataMenuInfo(self).click()
+            Data.GetDataMenuToSendFriend(self).click()
+            Data.GetDataMenuToSendFriendAddFriend(self).click()
+            Friend.GetFriendUnderFirstPeopleFollowed(self).click()
+            Menu.GetMenuFriendBack(self).click()
+            Data.GetDataSendToFriend(self).click()
+            time.sleep(3)
+            Data.GetDataSendMessageBack(self).click()
+            time.sleep(1)
+            Data.GetDataBack(self).click()
+            Tap.GetToMe(self).click()
+            FollowedNumber = Me.GetFollowNumber(self).text
+            self.assertEqual(1, int(FollowedNumber))
+            Follow.GetFollowInfo(self).click()
+            time.sleep(2)
+            FollowName = Follow.GetFollowFirstPeopleName(self).text
+            FollowId = Follow.GetFollowFirstPeopleId(self).text
+            Follow.GetFollowFirstPeopleInfo(self).click()
+            time.sleep(2)
+            PeopleId = People.GetPeopleId(self).text
+            PeopleName = People.GetPeopleName(self).text
+            self.assertEqual(FollowId, PeopleId)
+            self.assertEqual(FollowName, PeopleName)
+            People.GetPeopleFollowed(self).click()
+            People.GetPeopleBack(self).click()
+            time.sleep(1)
+            Follow.GetFollowBack(self).click()
+        except:
+            self.driver.save_screenshot('NoFriendSendToFriendError.png')
+            raise
+
+    def test_RefreshFriends(self):
+        try:
+            Tap.GetToHome(self).click()
+            Menu.GetMenuFriendInto(self).click()
+            time.sleep(3)
+            FirstPeopleName = Friend.GetFriendUnderFirstPeopleName(self).text
+            SecondPeopleName = Friend.GetFriendUnderSecondPeopleName(self).text
+            Friend.GetFriendUnderPeopleChanged(self).click()
+            ReFirstPeopleName = Friend.GetFriendUnderFirstPeopleName(self).text
+            ReSecondPeopleName = Friend.GetFriendUnderSecondPeopleName(self).text
+            self.assertNotEqual(FirstPeopleName, ReFirstPeopleName)
+            self.assertNotEqual(SecondPeopleName, ReSecondPeopleName)
+            Menu.GetMenuFriendBack(self).click()
+        except:
+            self.driver.save_screenshot('RefreshFriendsError.png')
             raise
 
 

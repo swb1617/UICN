@@ -45,6 +45,11 @@ class Menu:
                                                                  "1]/android.view.ViewGroup[2]")
         return FriendInto
 
+    def GetMenuFriendBack(self):
+        MenuFriendBack = self.driver.find_element(by=By.XPATH,
+                                                  value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[2]")
+        return MenuFriendBack
+
     def GetMenuTrainingGoalsInto(self):  # 首页修改训练按钮
         TrainingGoalsInto = self.driver.find_element(by=By.XPATH, value="//android.widget.FrameLayout["
                                                                         "1]/android.widget.LinearLayout["
@@ -274,6 +279,10 @@ class Data:
                                                                     "1]/android.widget.RelativeLayout["
                                                                     "1]/android.widget.ImageView[1]")
         return DataShareBack
+
+    def GetDataMenuToSendFriendAddFriend(self):
+        DataMenuToSendFriendAddFriend = self.driver.find_element(by=By.XPATH, value="/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.Button")
+        return DataMenuToSendFriendAddFriend
 
     def GetDataShareWatermarkPhoto(self):  # 详情页分享水印照片按钮
         DataShareWatermarkPhoto = self.driver.find_element(by=By.XPATH, value="//android.widget.FrameLayout["
@@ -1493,6 +1502,15 @@ class Me:
                                                                "1]/android.widget.TextView[2]")
         return MeUserId
 
+    def GetFollowNumber(self):
+        FollowNumber = self.driver.find_element(by=By.XPATH,
+                                                value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout[1]/android.widget.TextView[2]")
+        return FollowNumber
+
+    def GetMeFeedBackTitle(self):
+        MeFeedBackTitle = self.driver.find_element(by=By.XPATH, value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView")
+        return MeFeedBackTitle
+
     def GetMEUserDetailsInfo(self):
         MeUserDetailsInfo = self.driver.find_element(by=By.XPATH, value="//android.widget.FrameLayout["
                                                                         "1]/android.widget.LinearLayout["
@@ -2193,3 +2211,204 @@ class ErrorHappen:
                                                                   "1]/android.widget.LinearLayout["
                                                                   "1]/android.widget.TextView[2]")
         return DataErrorOk
+
+class Friend:
+    def GetFriendFirstPeopleName(self):
+        FriendFirstPeopleName = self.driver.find_element(by=By.XPATH,
+                                                         value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[5]/android.view.View[1]/android.view.View[2]")
+        return FriendFirstPeopleName
+
+    def GetFriendFirstPeopleDistance(self):
+        FriendFirstPeopleDistance = self.driver.find_element(by=By.XPATH,
+                                                             value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[5]/android.view.View[1]/android.view.View[4]")
+        return FriendFirstPeopleDistance
+
+    def GetFriendFirstPeopleFollow(self):
+        FriendFirstPeopleFollow = self.driver.find_element(by=By.XPATH,
+                                                           value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[5]/android.view.View[1]/android.view.View[6]/android.widget.Button")
+        return FriendFirstPeopleFollow
+
+    def GetFriendSecondPeopleName(self):
+        FriendSecondPeopleName = self.driver.find_element(by=By.XPATH,
+                                                          value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[5]/android.view.View[2]/android.view.View[2]")
+        return FriendSecondPeopleName
+
+    def GetFriendSecondPeopleDistance(self):
+        FriendSecondPeopleDistance = self.driver.find_element(by=By.XPATH,
+                                                              value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[5]/android.view.View[2]/android.view.View[4]")
+        return FriendSecondPeopleDistance
+
+    def GetFriendSecondPeopleFollow(self):
+        FriendSecondPeopleFollow = self.driver.find_element(by=By.XPATH,
+                                                            value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[5]/android.view.View[2]/android.view.View[6]/android.widget.Button")
+        return FriendSecondPeopleFollow
+
+    def GetFriendThirdPeopleName(self):
+        FriendThirdPeopleName = self.driver.find_element(by=By.XPATH,
+                                                         value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[5]/android.view.View[3]/android.view.View[2]")
+        return FriendThirdPeopleName
+
+    def GetFriendThirdPeopleDistance(self):
+        FriendThirdPeopleDistance = self.driver.find_element(by=By.XPATH,
+                                                             value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[5]/android.view.View[3]/android.view.View[4]")
+        return FriendThirdPeopleDistance
+
+    def GetFriendThirdPeopleFollow(self):
+        FriendThirdPeopleFollow = self.driver.find_element(by=By.XPATH,
+                                                           value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[5]/android.view.View[3]/android.view.View[6]/android.widget.Button")
+        return FriendThirdPeopleFollow
+
+    def GetFriendFourthPeopleName(self):
+        FriendFourthPeopleName = self.driver.find_element(by=By.XPATH,
+                                                          value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[5]/android.view.View[1]/android.view.View[2]")
+        return FriendFourthPeopleName
+
+    def GetFriendFourthPeopleDistance(self):
+        FriendFourthPeopleDistance = self.driver.find_element(by=By.XPATH,
+                                                              value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[5]/android.view.View[1]/android.view.View[4]")
+        return FriendFourthPeopleDistance
+
+    def GetFriendFourthPeopleFollow(self):
+        FriendFourthPeopleFollow = self.driver.find_element(by=By.XPATH,
+                                                            value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[5]/android.view.View[1]/android.view.View[6]/android.widget.Button")
+        return FriendFourthPeopleFollow
+
+    def GetFriendFifthPeopleName(self):
+        FriendFifthPeopleName = self.driver.find_element(by=By.XPATH,
+                                                         value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[5]/android.view.View[2]/android.view.View[2]")
+        return FriendFifthPeopleName
+
+    def GetFriendFifthPeopleDistance(self):
+        FriendFifthPeopleDistance = self.driver.find_element(by=By.XPATH,
+                                                             value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[5]/android.view.View[2]/android.view.View[4]")
+        return FriendFifthPeopleDistance
+
+    def GetFriendFifthPeopleFollow(self):
+        FriendFifthPeopleFollow = self.driver.find_element(by=By.XPATH,
+                                                           value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[5]/android.view.View[2]/android.view.View[6]/android.widget.Button")
+        return FriendFifthPeopleFollow
+
+    def GetFriendSixthPeopleName(self):
+        FriendSixthPeopleName = self.driver.find_element(by=By.XPATH,
+                                                         value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[5]/android.view.View[3]/android.view.View[2]")
+        return FriendSixthPeopleName
+
+    def GetFriendSixthPeopleDistance(self):
+        FriendSixthPeopleDistance = self.driver.find_element(by=By.XPATH,
+                                                             value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[5]/android.view.View[3]/android.view.View[4]")
+        return FriendSixthPeopleDistance
+
+    def GetFriendSixthPeopleFollow(self):
+        FriendSixthPeopleFollow = self.driver.find_element(by=By.XPATH,
+                                                           value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[5]/android.view.View[3]/android.view.View[6]/android.widget.Button")
+        return FriendSixthPeopleFollow
+
+    def GetFriendSeekFriendId(self):
+        FriendSeekFriendId = self.driver.find_element(by=By.XPATH,
+                                                      value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[3]")
+        return FriendSeekFriendId
+
+    def GetFriendSeekText(self):
+        FriendSeektext = self.driver.find_element(by=By.XPATH,
+                                                  value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.widget.EditText")
+        return FriendSeektext
+
+    def GetFriendSeekFriendFollow(self):
+        FriendSeekFriendFollow = self.driver.find_element(by=By.XPATH,
+                                                          value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View[6]/android.widget.Button")
+        return FriendSeekFriendFollow
+
+    def GetFriendUnderFirstPeopleName(self):
+        FriendUnderFirstPeopleName = self.driver.find_element(by=By.XPATH,
+                                                              value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[8]/android.view.View[2]")
+        return FriendUnderFirstPeopleName
+
+    def GetFriendUnderFirstPeopleDistance(self):
+        FriendUnderFristPeopleDistance = self.driver.find_element(by=By.XPATH,
+                                                                  value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[8]/android.view.View[4]")
+        return FriendUnderFristPeopleDistance
+
+    def GetFriendUnderFirstPeopleFollowed(self):
+        FriendUnderFirstPeopleFollowed = self.driver.find_element(by=By.XPATH,
+                                                                  value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[8]/android.view.View[6]/android.widget.Button")
+        return FriendUnderFirstPeopleFollowed
+
+    def GetFriendUnderSecondPeopleName(self):
+        FriendUnderSecondPeopleName = self.driver.find_element(by=By.XPATH,
+                                                               value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[8]/android.view.View[8]")
+        return FriendUnderSecondPeopleName
+
+    def GetFriendUnderSecondPeopleDistance(self):
+        FriendUnderSecondPeopleDistance = self.driver.find_element(by=By.XPATH,
+                                                                   value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[8]/android.view.View[10]")
+        return FriendUnderSecondPeopleDistance
+
+    def GetFriendUnderSecondPeopleFollowed(self):
+        FriendUnderSecondPeopleFollowed = self.driver.find_element(by=By.XPATH,
+                                                                   value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[8]/android.view.View[12]/android.widget.Button")
+        return FriendUnderSecondPeopleFollowed
+
+    def GetFriendUnderPeopleChanged(self):
+        FriendUnderPeopleChanged = self.driver.find_element(by=By.XPATH,
+                                                            value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[7]/android.widget.Button")
+        return FriendUnderPeopleChanged
+
+
+class Follow:
+
+    def GetFollowInfo(self):
+        FollowInfo = self.driver.find_element(by=By.XPATH,
+                                              value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout[1]/android.widget.TextView[1]")
+        return FollowInfo
+
+    def GetFollowBack(self):
+        FollowBack = self.driver.find_element(by=By.XPATH,
+                                              value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.ImageView[1]")
+        return FollowBack
+
+    def GetFollowFirstPeopleName(self):
+        FollowFirstPeopleName = self.driver.find_element(by=By.XPATH,
+                                                         value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView[1]")
+        return FollowFirstPeopleName
+
+    def GetFollowFirstPeopleId(self):
+        FollowFirstPeopleId = self.driver.find_element(by=By.XPATH,
+                                                       value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout[1]/android.widget.TextView[2]")
+        return FollowFirstPeopleId
+
+    def GetFollowFirstPeopleDistance(self):
+        FollowFirstPeopleDistance = self.driver.find_element(by=By.XPATH,
+                                                             value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView[2]")
+        return FollowFirstPeopleDistance
+
+    def GetFollowFirstPeopleInfo(self):
+        FollowFirstPeopleInfo = self.driver.find_element(by=By.XPATH,
+                                                         value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.RelativeLayout")
+        return FollowFirstPeopleInfo
+
+
+class People:
+    def GetPeopleName(self):
+        PeopleName = self.driver.find_element(by=By.XPATH,
+                                              value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.TextView")
+        return PeopleName
+
+    def GetPeopleId(self):  # 问题 无法打开关注粉丝列表
+        PeopleId = self.driver.find_element(by=By.XPATH,
+                                            value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.TextView[2]")
+        return PeopleId
+
+    def GetPeopleDistance(self):
+        PeopleDistance = self.driver.find_element(by=By.XPATH,
+                                                  value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout[1]/android.widget.TextView[2]")
+        return PeopleDistance
+
+    def GetPeopleFollowed(self):
+        PeopleFollowed = self.driver.find_element(by=By.XPATH,
+                                                  value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView")
+        return PeopleFollowed
+
+    def GetPeopleBack(self):
+        PeopleBack = self.driver.find_element(by=By.XPATH,
+                                              value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.ImageView")
+        return PeopleBack
